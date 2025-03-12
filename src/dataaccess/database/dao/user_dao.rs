@@ -1,7 +1,6 @@
 use diesel::prelude::*;
 use crate::businesslogic::models::user::User;
 use crate::dataaccess::database::schema::users;
-use crate::config::database::DbPool;
 
 pub fn get_users(conn: &mut PgConnection) -> Vec<User> {
     users::table.load::<User>(conn).expect("Error loading users")
