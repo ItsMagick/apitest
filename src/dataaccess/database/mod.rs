@@ -1,3 +1,3 @@
 pub mod connector;
 pub mod dao;
-mod schema;
+pub mod schema;
