@@ -36,9 +36,10 @@ BEGIN
     IF (
         NEW IS DISTINCT FROM OLD AND
         NEW.updated_at IS NOT DISTINCT FROM OLD.updated_at
-    ) THEN
+        ) THEN
         NEW.updated_at := current_timestamp;
     END IF;
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
+SELECT diesel_manage_updated_at('users');

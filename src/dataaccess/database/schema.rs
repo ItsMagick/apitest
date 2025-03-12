@@ -1,11 +1,10 @@
 // @generated automatically by Diesel CLI.
 
-// src/schema.rs
 diesel::table! {
     users (id) {
-        id -> Integer,
+        id -> Int4,
         name -> Text,
         email -> Text,
-        created_at -> Timestamp,
+        created_at -> Timestamptz,
     }
 }

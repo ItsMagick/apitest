@@ -1,7 +1,6 @@
-use serde::{Serialize, Deserialize};
 use diesel::prelude::*;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Queryable, Insertable)]
 #[diesel(table_name = crate::schema::users)]
 pub struct User {
     pub id: i32,
